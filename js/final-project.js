@@ -58,3 +58,72 @@ function calculateScore(diceVal1, diceVal2){
 
     return score;
 }
+
+/* 
+Instantiate 2 Dice Objects for the Player
+and 2 Dice Objects for the Computer
+*/
+let playerDice1 = new Dice("black");
+let playerDice2 = new Dice("black");
+let compDice1 = new Dice("red");
+let compDice2 = new Dice("red");
+
+
+rollBtn.addEventListener('click', function(){
+
+    if(round < rounds){
+        round++;
+        $round.html(`Round: ${round}`);
+
+        let playerResult1 = playerDice1.roll();
+        let playerResult2 = playerDice2.roll();
+        let compResult1 = compDice1.roll();
+        let compResult2 = compDice2.roll();
+
+        $playerDice.html(`${playerDice1.describeSelf()} ${playerDice2.describeSelf()}`);
+        $compDice.html(`${compDice1.describeSelf()} ${compDice2.describeSelf()}`);
+        
+        playerScore = calculateScore(playerResult1, playerResult2);
+        compScore = calculateScore(compResult1, compResult2);
+
+        playerTotal += playerScore;
+        compTotal += compScore;
+    }else{
+
+    }
+
+    $playerRoundScore.html(`Round Score: ${playerScore}`);
+    $playerTotalScore.html(`Total Score: ${playerTotal}`);
+    $compRoundScore.html(`Round Score: ${compScore}`);
+    $compTotalScore.html(`Total Score: ${compTotal}`);
+
+    if(round === 3){
+        if(playerTotal > compTotal){
+            winner = 'Player';
+        }else{
+            winner = 'Computer';
+        }
+    }
+    $result.html(`Winner: ${winner}`);
+});
+
+//Code to reset the game and values
+resetBtn.addEventListener('click', function(){
+    //reset variables to default values
+    playerScore = 0;
+    playerTotal = 0;
+    compScore = 0;
+    compTotal = 0;
+    round = 0;
+    winner = '';
+
+    //update html to display default values and restore dice images to default
+    $playerRoundScore.html(`Round Score: ${playerScore}`);
+    $playerTotalScore.html(`Total Score: ${playerTotal}`);
+    $compRoundScore.html(`Round Score: ${compScore}`);
+    $compTotalScore.html(`Total Score: ${compTotal}`);
+    $round.html(`Round: ${round}`);
+    $result.html(`Winner: ${winner}`);
+    $('#playerDice img').attr('src', defaultPlayerDice);
+    $('#computerDice img').attr('src', defaultCompDice);
+});
