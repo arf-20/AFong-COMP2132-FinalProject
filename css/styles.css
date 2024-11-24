@@ -81,3 +81,11 @@ img {
 #roll {
     margin-right: 5px;
 }
+
+p {
+    max-width: 225px;
+}
+
+h2 {
+    max-width: 225px;
+}
