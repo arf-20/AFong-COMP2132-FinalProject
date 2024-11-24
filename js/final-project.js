@@ -93,6 +93,28 @@ rollBtn.addEventListener('click', function(){
 
         playerTotal += playerScore;
         compTotal += compScore;
+
+        if(playerScore > compScore){
+            $playerRoundScore.css('background-color', 'lightgreen');
+            $compRoundScore.css('background-color', '');
+        }else if(playerScore == compScore){
+            $playerRoundScore.css('background-color', '');
+            $compRoundScore.css('background-color', '');
+        }else{
+            $compRoundScore.css('background-color', 'lightgreen');
+            $playerRoundScore.css('background-color', '');
+        }
+    
+        if(playerTotal > compTotal){
+            $playerTotalScore.css('background-color', 'lightgreen');
+            $compTotalScore.css('background-color', '');
+        }else if(playerTotal == compTotal){
+            $compTotalScore.css('background-color', '');
+            $playerTotalScore.css('background-color', '');
+        }else{
+            $compTotalScore.css('background-color', 'lightgreen');
+            $playerTotalScore.css('background-color', '');
+        }
     }else{
 
     }
@@ -108,8 +130,9 @@ rollBtn.addEventListener('click', function(){
         }else{
             winner = 'Computer';
         }
+        $result.html(`Winner: ${winner}`);
+        $result.css('background', 'yellow')
     }
-    $result.html(`Winner: ${winner}`);
 });
 
 //Code to reset the game and values
@@ -131,4 +154,11 @@ resetBtn.addEventListener('click', function(){
     $result.html(`Winner: ${winner}`);
     $('#playerDice img').attr('src', defaultPlayerDice);
     $('#computerDice img').attr('src', defaultCompDice);
+
+    //reset highlights
+    $playerRoundScore.css('background-color', '');
+    $compRoundScore.css('background-color', '');
+    $playerTotalScore.css('background-color', '');
+    $compTotalScore.css('background-color', '');
+    $result.css('background', '')
 });
