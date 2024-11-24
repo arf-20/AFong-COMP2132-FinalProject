@@ -80,8 +80,13 @@ rollBtn.addEventListener('click', function(){
         let compResult1 = compDice1.roll();
         let compResult2 = compDice2.roll();
 
-        $playerDice.html(`${playerDice1.describeSelf()} ${playerDice2.describeSelf()}`);
-        $compDice.html(`${compDice1.describeSelf()} ${compDice2.describeSelf()}`);
+        $playerDice.fadeOut(200, function(){
+            $playerDice.html(`${playerDice1.describeSelf()} ${playerDice2.describeSelf()}`);
+        }).fadeIn(200);
+        
+        $compDice.fadeOut(200, function(){
+            $compDice.html(`${compDice1.describeSelf()} ${compDice2.describeSelf()}`);
+        }).fadeIn(200);
         
         playerScore = calculateScore(playerResult1, playerResult2);
         compScore = calculateScore(compResult1, compResult2);
