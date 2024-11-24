@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- Author: Andrew Fong -->
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <script src="js/final-project.js" defer></script>
+        <script src="js/jquery3.7.js"></script>
+    
+        <link rel="stylesheet" href="css/styles.css">
+        <title>COMP 2132 - Final Project - Andrew Fong</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>COMP 2132 - Final Project</header>
+
+        
+            <h1 id="gameTitle">Let's Play Dice!!</h1>
+
+            <div id="gameArea">
+                <h2 id="player">Player</h2>
+                <h2 id="computer">Computer</h2>
+
+                <p id="playerRoll">Current Roll: </p>
+                <p id="computerRoll">Current Roll: </p>
+                
+                <div class="diceWrapper">
+                    <p class="dice" id="playerDice"> <img src="images/black_1.png"> <img src="images/black_1.png"></p>
+                </div>
+                 
+                <div class="diceWrapper">
+                    <p class="dice" id="computerDice"><img src="images/red_1.png"> <img src="images/red_1.png"></p>
+                </div>
+
+                <p id="playerScore">Round Score: 0</p>
+                <p id="computerScore">Round Score: 0</p>
+
+                <p id="playerTotal">Total Score: 0</p>
+                <p id="computerTotal">Total Score: 0</p>
+    
+                <h2 id="round">Round: 0</h2>
+                <h2 id="result">Winner: </h2>
+            </div>
+            
+            <div id="buttons">
+                <button id="roll">Roll Dice</button>
+                <button id="reset">Reset Game</button>    
+            </div>
+
+
+            <footer>COMP 2132</footer>
+        </div>
+    </body>
+</html>
