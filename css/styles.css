@@ -39,3 +39,45 @@ footer {
     display: block;
     margin: 0;
 }
+
+
+img {
+    max-width: 100px;
+    max-height: auto;
+}
+
+.diceWrapper {
+    border: solid;
+    background-color: #F2DCB3;
+    border-radius: 7px;
+    padding: 7px;
+    max-width: 225px;
+    max-height: auto;
+}
+
+#gameArea {
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+    grid-template-areas:
+        "player computer",
+        "playerRoll computerRoll",
+        "playerDice computerDice"
+        "playerScore computerScore",
+        "playerTotal computerTotal",
+        "round round",
+        "result result";
+    padding-left: 15%;
+}
+
+#gameTitle {
+    text-align: center;
+}
+
+#buttons {
+   display: flex;
+   justify-content: center;
+}
+
+#roll {
+    margin-right: 5px;
+}
