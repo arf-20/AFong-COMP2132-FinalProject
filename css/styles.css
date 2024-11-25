@@ -3,6 +3,7 @@
 @import url("fonts.css");
 @import url('https://fonts.googleapis.com/css?family=Sofia');
 @import url('https://fonts.google.com/specimen/Open+Sans?query=open+sans');
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
 /* ------ Browser Resets ------ */
 @import url("normalize.css");
 
@@ -23,6 +24,13 @@ header {
     margin: 0;
 }
 
+  #gameTitle {
+    font-family: "Dela Gothic One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
 #wrapper {
     background-color:white;
     padding: 5px 5px 5px 5px;
@@ -37,7 +45,7 @@ footer {
     background-color: #F2DCB3;
     padding: 5px;
     display: block;
-    margin: 0;
+    margin: 10px;
 }
 
 
@@ -66,7 +74,8 @@ img {
         "playerTotal computerTotal",
         "round round",
         "result result";
-    padding-left: 15%;
+    padding-left: 200px;
+    padding-right: 150px;
 }
 
 #gameTitle {
