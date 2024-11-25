@@ -32,7 +32,7 @@ class Dice {
     }
 
     describeSelf(){
-        return `<img src="images/${this.color}_${this.currentSide}.png" alt="${this.color} Dice. Value: ${this.currentSide}">`;
+        return `<img src="images/${this.color}_${this.currentSide}.png" alt="${this.color} Dice Value: ${this.currentSide}">`;
     }
 }
 
