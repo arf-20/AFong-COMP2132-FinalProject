@@ -131,7 +131,7 @@ rollBtn.addEventListener('click', function(){
             winner = 'Computer';
         }
         $result.html(`Winner: ${winner}`);
-        $result.css('background', 'yellow')
+        $result.css('background', '#F2DCB3')
     }
 });
 
