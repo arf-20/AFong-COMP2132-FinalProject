@@ -13,17 +13,27 @@ const defaultCompDice = "images/red_1.png";
 const rollBtn = document.getElementById('roll');
 const resetBtn = document.getElementById('reset');
 
-//Variables to keep track of player/computer scores and total, as well as Rounds played and the Winner
+//Variable to hold how many rounds will be played
 const rounds = 3;
-let playerRoll = 0;
+
+//Variables to keep track of player/computer scores and total, as well as Rounds played, and the Winner
+//Variables for player score and total score
 let playerScore = 0;
 let playerTotal = 0;
-let compRoll = 0;
+
+//Variables for computer score and total score
 let compScore = 0;
 let compTotal = 0;
+
+//Variables to track round and winner
 let winner = '';
 let round = 0;
 
+/*
+Dice Object, takes 1 parameter (color) as there will be 2 different dice. Black dice for the Player and Red dice for the Computer.
+Has 3 attributes, sides to hold the values of each side of the dice, 
+currentSide to identify the side that's face up, and color to identify the dice color.
+*/
 class Dice {
     constructor(color){
         this.sides = [1, 2, 3, 4, 5, 6];
@@ -36,6 +46,7 @@ class Dice {
     }
 }
 
+//Dice Function Roll, uses Math.random() to determine which side of the dice to show
 Dice.prototype.roll = function(){
     let result = Math.round(Math.random() * (this.sides.length - 1));
 
@@ -44,7 +55,12 @@ Dice.prototype.roll = function(){
     return this.currentSide;
 }
 
-//Function to calculate the score when two dice are rolled
+/*
+Function to calculate the score when two dice are rolled and return the score.
+If either diceVal1 or diceVal2 is 1, then the score returned is 0. 
+If diceVal1 and diceVal2 are the same value, then the score returned is (diceVal1 + diceVal2) * 2.
+For any other roll, the score returned is diceVal1 + diceVal2.
+*/
 function calculateScore(diceVal1, diceVal2){
     let score;
 
@@ -68,7 +84,12 @@ let playerDice2 = new Dice("black");
 let compDice1 = new Dice("red");
 let compDice2 = new Dice("red");
 
-
+/*
+When Roll Dice button is clicked, roll a pair of dice for the player and computer if round is < rounds.
+Dice images change to reflect player rolls and computer rolls.
+Round and total scores calculated and updated.
+When 3 rounds have been played, the winner is determined and displayed.
+*/
 rollBtn.addEventListener('click', function(){
 
     if(round < rounds){
@@ -135,7 +156,7 @@ rollBtn.addEventListener('click', function(){
     }
 });
 
-//Code to reset the game and values
+//When the Reset Game button is clicked, reset game and values.
 resetBtn.addEventListener('click', function(){
     //reset variables to default values
     playerScore = 0;
