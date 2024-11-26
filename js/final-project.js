@@ -115,6 +115,7 @@ rollBtn.addEventListener('click', function(){
         playerTotal += playerScore;
         compTotal += compScore;
 
+        //background color of score highlighted to show who won the round
         if(playerScore > compScore){
             $playerRoundScore.css('background-color', 'lightgreen');
             $compRoundScore.css('background-color', '');
@@ -126,6 +127,7 @@ rollBtn.addEventListener('click', function(){
             $playerRoundScore.css('background-color', '');
         }
     
+        //background color of total score highlighted to show is currently winning
         if(playerTotal > compTotal){
             $playerTotalScore.css('background-color', 'lightgreen');
             $compTotalScore.css('background-color', '');
